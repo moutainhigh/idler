@@ -1,0 +1,41 @@
+log4j:WARN No appenders could be found for logger (com.lemi.idler.server.ResourceManager).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+server starting...
+server try bind :0.0.0.0:8081
+IdlerServer bind [http-nio-8081]
+Server startup in 53 ms.
+2017-02-10 17:51:21,981 WARN  - Failed to initialize a channel. Closing: [id: 0x8e639f25, /127.0.0.1:47488 => /127.0.0.1:8081]
+java.lang.IllegalArgumentException: Duplicate handler name: http-aggregator
+	at io.netty.channel.DefaultChannelPipeline.filterName(DefaultChannelPipeline.java:1076)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:145)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:130)
+	at com.lemi.idler.server.handler.ApplicationHandler.installHttpPipleLine(ApplicationHandler.java:22)
+	at com.lemi.idler.server.handler.ApplicationHandler.initChannel(ApplicationHandler.java:17)
+	at com.lemi.idler.server.handler.ApplicationHandler.initChannel(ApplicationHandler.java:11)
+	at io.netty.channel.ChannelInitializer.channelRegistered(ChannelInitializer.java:69)
+	at io.netty.channel.ChannelHandlerInvokerUtil.invokeChannelRegisteredNow(ChannelHandlerInvokerUtil.java:32)
+	at io.netty.channel.DefaultChannelHandlerInvoker.invokeChannelRegistered(DefaultChannelHandlerInvoker.java:50)
+	at io.netty.channel.PausableChannelEventExecutor.invokeChannelRegistered(PausableChannelEventExecutor.java:56)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRegistered(AbstractChannelHandlerContext.java:345)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRegistered(DefaultChannelPipeline.java:843)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.register0(AbstractChannel.java:519)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.access$100(AbstractChannel.java:422)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$1.run(AbstractChannel.java:492)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:328)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at io.netty.util.internal.chmv8.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1412)
+	at io.netty.util.internal.chmv8.ForkJoinTask.doExec(ForkJoinTask.java:280)
+	at io.netty.util.internal.chmv8.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:877)
+	at io.netty.util.internal.chmv8.ForkJoinPool.scan(ForkJoinPool.java:1706)
+	at io.netty.util.internal.chmv8.ForkJoinPool.runWorker(ForkJoinPool.java:1661)
+	at io.netty.util.internal.chmv8.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:126)
+2017-02-10 17:51:22,369 INFO  - ip [ 127.0.0.1 ] : 1 
+click - [127.0.0.1] - [/2017/02/10/ZbzTjuJp.apk]
+2017-02-10 17:51:24,428 INFO  - Transfer complete.
+success - [127.0.0.1] - [/2017/02/10/ZbzTjuJp.apk]
+2017-02-10 17:51:55,803 INFO  - ip [ 127.0.0.1 ] : 2 
+click - [127.0.0.1] - [/2017/02/10/ZbzTjuJp.apk]
+2017-02-10 17:51:57,099 INFO  - Transfer complete.
+success - [127.0.0.1] - [/2017/02/10/ZbzTjuJp.apk]
